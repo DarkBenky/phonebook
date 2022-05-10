@@ -33,7 +33,6 @@ class phone_book:
         return split_word
     def smart_search(self, name):
         result = []
-
         split_word = self.split_word(name)
         for i in self.contacts:
             splited_result = self.split_word(i.name)
@@ -51,10 +50,10 @@ class phone_book:
         for contact in result:
             if f"{contact.name} {contact.number}" is not res:
                 res.append(f"{contact.name} {contact.number}")
+        
         for r in res:
-            if r in res:
+            if r not in sorted_result:
                 sorted_result.append(r)
-                res.remove(r)
         print(sorted_result)
 phone_book = phone_book()
 print("\n")	
